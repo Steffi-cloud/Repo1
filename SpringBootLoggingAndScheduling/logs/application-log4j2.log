@@ -1,0 +1,25 @@
+2025-05-23 19:28:26 [main] INFO  : Starting SpringBootLoggingAndSchedulingApplication using Java 17.0.12 with PID 6160 (D:\springbootoldbutnewws\SpringBootLoggingAndScheduling\target\classes started by LENOVO in D:\springbootoldbutnewws\SpringBootLoggingAndScheduling)
+2025-05-23 19:28:27 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2025-05-23 19:28:28 [main] INFO  : Tomcat initialized with port 8080 (http)
+2025-05-23 19:28:28 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-23 19:28:28 [main] INFO  : Starting service [Tomcat]
+2025-05-23 19:28:28 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-05-23 19:28:28 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2025-05-23 19:28:28 [main] INFO  : Root WebApplicationContext: initialization completed in 1809 ms
+2025-05-23 19:28:29 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2025-05-23 19:28:29 [main] INFO  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-23 19:28:29 [main] INFO  : Started SpringBootLoggingAndSchedulingApplication in 3.331 seconds (process running for 4.289)
+2025-05-23 19:28:29 [scheduling-1] INFO  : Regular task performed at 
+2025-05-23 19:28:30 [scheduling-1] INFO  : Delayed Regular task performed at 
+2025-05-23 19:28:39 [scheduling-1] INFO  : Regular task performed at 
+2025-05-23 19:28:40 [scheduling-1] INFO  : Delayed Regular task performed at 
+2025-05-23 19:28:49 [scheduling-1] INFO  : Regular task performed at 
+2025-05-23 19:28:50 [scheduling-1] INFO  : Delayed Regular task performed at 
+2025-05-23 19:28:59 [scheduling-1] INFO  : Regular task performed at 
+2025-05-23 19:29:00 [scheduling-1] INFO  : Delayed Regular task performed at 
+2025-05-23 19:29:09 [scheduling-1] INFO  : Regular task performed at 
+2025-05-23 19:29:10 [scheduling-1] INFO  : Delayed Regular task performed at 
+2025-05-23 19:29:19 [scheduling-1] INFO  : Regular task performed at 
+2025-05-23 19:29:20 [scheduling-1] INFO  : Delayed Regular task performed at 
+2025-05-23 19:29:26 [SpringApplicationShutdownHook] INFO  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-23 19:29:27 [tomcat-shutdown] INFO  : Graceful shutdown complete
