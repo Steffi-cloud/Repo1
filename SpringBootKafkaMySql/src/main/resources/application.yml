@@ -1,0 +1,30 @@
+
+spring:
+  application:
+    name: SpringBootKafkaMySql
+ ## kafka:
+   ## producer:
+    ##  bootstrap-servers: localhost:9092
+    ##  key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    ##  value-serializer: org.apache.kafka.common.serialization.StringSerializer
+                  
+    ##consumer:
+    ##  bootstrap-servers: localhost:9092
+    ##  key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    ##  value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  datasource:
+    password: Admin@1234
+    url: jdbc:mysql://localhost:3306/sample?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+        
+myapp:
+    kafka:
+      topic: myKafkaTest
+
+server:
+  port: 1000
+    
+    
