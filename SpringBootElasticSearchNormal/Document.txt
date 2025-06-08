@@ -1,0 +1,9 @@
+Please use java 11 if in case you are running it in local after installing java 11 in your machine.
+
+
+And use the corresponding elastic search and spring boot version for that,else you can run it as it is but the elastic search needs
+
+to be run as 8.3.2 on your machine along with  java 17 installed on your machine
+
+
+Java 11 is the right one for this one
