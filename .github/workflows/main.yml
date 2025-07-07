@@ -22,5 +22,5 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd your-subdirectory-if-any   # <--- if your pom.xml is in a folder
+        cd ExpenseTracker   # <--- if your pom.xml is in a folder
         mvn clean install
