@@ -1,0 +1,17 @@
+INSERT INTO transaction (description, amount, type, category, date) VALUES
+('flipkart', 880, 'INCOME', 'UPI_TRANSACTIONS_CREDIT', '2025-07-07'),
+('amazon', 1212, 'EXPENSE', 'ONLINE_PURCHASE', '2025-07-07'),
+('daily cab', 120, 'EXPENSE', 'DAILY_COMMUTE', '2025-07-07'),
+('foodpanda', 210, 'EXPENSE', 'FOOD', '2025-07-06'),
+('office cab', 260, 'EXPENSE', 'OFFICE_PURPOSE_COMMUTE', '2025-07-07'),
+('powerbill', 440, 'EXPENSE', 'ELECTRICITY', '2025-07-07'),
+('uber', 150, 'EXPENSE', 'OUTSTATION_COMMUTE', '2025-07-06'),
+('bank', 2200, 'EXPENSE', 'BANK_TRANSFER_DEBIT', '2025-07-07'),
+('axis debit', 3100, 'EXPENSE', 'DEBIT_CARD_TRANSACTIONS_DEBIT', '2025-07-07'),
+('credit card debit', 1100, 'EXPENSE', 'CREDIT_CARD_TRANSACTIONS_DEBIT', '2025-07-06'),
+('credit card credit', 2100, 'INCOME', 'CREDIT_CARD_TRANSACTIONS_CREDIT', '2025-07-06'),
+('cheque credit', 1500, 'INCOME', 'CHEQUE_CREDIT', '2025-07-07'),
+('cheque debit', 500, 'EXPENSE', 'CHEQUE_DEBIT', '2025-07-06'),
+('wire transfer debit', 600, 'EXPENSE', 'WIRED_TRANSFER_DEBIT', '2025-07-07'),
+('wire transfer credit', 900, 'INCOME', 'WIRED_TRANSFER_CREDIT', '2025-07-06'),
+('home bills', 1300, 'EXPENSE', 'HOME_BILLS', '2025-07-07');
