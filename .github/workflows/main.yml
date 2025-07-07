@@ -1,6 +1,19 @@
-- name: Cleanup Redundant PRs and Branches from CD Automation
-  if: github.event.pull_request != null
-  uses: GlueOps/github-actions-cleanup-redundant-cd-prs@v0.2.0
-  with:
-    pr_number: ${{ github.event.pull_request.number }}
-    gh_token: ${{ secrets.GITHUB_TOKEN }}
+name: CI Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+      - name: Build with Maven
+        run: mvn clean install
