@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.constants.Category;
 import com.example.demo.constants.TransactionType;
+import com.example.demo.model.CategorySummary;
+import com.example.demo.model.MonthlySummary;
 import com.example.demo.model.Transaction;
 import com.example.demo.service.ExpenseService;
 
@@ -61,9 +64,26 @@ public class TransactionController {
 	@GetMapping("/transactions/categoryandtype")
 
 	public List<Transaction> getByCategoryAndType(@RequestParam Category category, @RequestParam TransactionType type) {
-		logger.info("fetching list of transactions for category and type: {}", category, type);
+		logger.info("fetching list of transactions for category and type: {}, {}", category, type);
 
 		return service.getTransactionsByCategoryAndType(category, type);
 
 	}
+
+	@GetMapping("/transactions/balance")
+	public BigDecimal getBalance(@RequestParam LocalDate startDate, @RequestParam LocalDate endDate) {
+		return service.getBalanceByDate(startDate, endDate);
+	}
+
+	@GetMapping("/transactions/monthlySummary")
+	public MonthlySummary getMonthlySummary(@RequestParam LocalDate date) {
+		return service.getMonthlySummary(date);
+	}
+
+	@GetMapping("/transactions/monthly-summary/grouped")
+	public List<CategorySummary> getMonthlySummaryByCategory(
+			@RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+		return service.getMonthlySummaryGroupedByCategory(date);
+	}
+
 }
