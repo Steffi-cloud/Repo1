@@ -22,5 +22,5 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd ExpenseTracker   # <--- if your pom.xml is in a folder
-        mvn clean install
+        cd SamplePdfReportGenerator   # <--- if your pom.xml is in a folder
+        mvn clean install 
