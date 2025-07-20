@@ -1,0 +1,9 @@
+hazelcast:
+  cluster-name: dev
+  network:
+    port:
+      port: 5701
+      auto-increment: true
+    join:
+      multicast:
+        enabled: true
