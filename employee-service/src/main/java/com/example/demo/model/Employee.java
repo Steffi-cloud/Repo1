@@ -11,11 +11,11 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	private String name;
 	public Employee() {
 	}
 
-	private String name;
+	
 
 	public int getId() {
 		return id;
@@ -30,6 +30,14 @@ public class Employee {
 	}
 
 	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public Employee(int id, String name) {
+		super();
+		this.id = id;
 		this.name = name;
 	}
 
