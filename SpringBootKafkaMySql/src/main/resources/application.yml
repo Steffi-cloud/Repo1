@@ -7,6 +7,7 @@ spring:
     username: root
     password: Admin@1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -28,10 +29,22 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
 
-
-# Custom app-specific topic name
+# Custom app-specific topic names
 myapp:
   kafka:
     topic: myKafkaTest
     error-topic: error-topic
     employee-batch-topic: employee-batch-topic
+
+##management:
+##  endpoints:
+##   web:
+##     exposure:
+##        include: prometheus
+##  metrics:
+##    enable:
+##      process: true
+##  prometheus:
+##   metrics:
+##      export:
+##       enabled: true

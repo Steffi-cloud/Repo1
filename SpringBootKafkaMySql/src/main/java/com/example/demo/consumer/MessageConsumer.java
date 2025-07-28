@@ -1,8 +1,5 @@
 package com.example.demo.consumer;
 
-
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +15,6 @@ import com.example.demo.repository.EmployeeRepository;
 @Component
 @EnableKafka
 public class MessageConsumer {
-	
 
 	@Autowired
 	private EmployeeRepository repo;
@@ -31,14 +27,10 @@ public class MessageConsumer {
 		repo.save(employee); // Simple and clean!
 	}
 
-	
-	@KafkaListener(
-		    topics = "error-topic",
-		    groupId = "error-group",
-		    containerFactory = "stringKafkaListenerContainerFactory"
-		)
-		public void consume(String message) {
-		    System.out.println("Received error message: " + message);
-		}
+	@KafkaListener(topics = "error-topic", groupId = "error-group", containerFactory = "stringKafkaListenerContainerFactory")
+	public void consume(String message) {
+		log.info("Received error message: {}", message);
+		// System.out.println("Received error message: " + message);
+	}
 
 }

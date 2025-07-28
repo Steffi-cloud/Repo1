@@ -33,6 +33,8 @@ public class KafkaRestController {
 	// Send message to kafka
 	@PostMapping("/send")
 	public String sendMsg(@RequestBody Employee emp) {
+		
+		log.info("sending message into topics: {}",emp);
 		producer.sendMessage(emp);
 		return "" + "'+message +'" + " sent successfully!";
 	}
@@ -43,6 +45,8 @@ public class KafkaRestController {
 	// Read all messages
 	@GetMapping("/getAll")
 	public List<Employee> getAllMessages() {
+		
+		log.info("getting all employees:");
 		return messageRepo.findAll();
 	}
 
@@ -52,6 +56,8 @@ public class KafkaRestController {
 
 		Pageable pageable = PageRequest.of(page, size);
 		Page<Employee> employeesPage = messageRepo.findAll(pageable);
+		
+		log.info("getting all employees by pagination: {}",employeesPage);
 
 		return ResponseEntity.ok(employeesPage);
 	}

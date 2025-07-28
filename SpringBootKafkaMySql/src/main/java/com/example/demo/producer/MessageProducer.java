@@ -31,7 +31,7 @@ public class MessageProducer {
 
 	public void sendError(Employee errorMessage) {
 		kafkaTemplate.send(errorTopic, errorMessage);
-		System.out.println("Sent error message: " + errorMessage);
+		log.error("Sent error message: " + errorMessage);
 	}
 
 }
