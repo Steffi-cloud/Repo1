@@ -1,0 +1,13 @@
+com\yourorg\dto\UserProfile.class
+com\yourorg\jwtfilter\JwtAuthenticationFilter.class
+com\yourorg\dto\UserActivityHistoryResponse.class
+com\yourorg\jwtfilter\SecurityConfig.class
+com\yourorg\jwtfilter\UserDetailsConfig.class
+com\yourorg\userprofile\service\UserProfileService.class
+com\yourorg\dto\UserProfileUpdateRequest.class
+com\yourorg\user\App.class
+com\yourorg\jwtfilter\FilterChainLogger.class
+com\yourorg\jwtfilter\JwtUtil.class
+com\yourorg\controller\UserProfileController.class
+com\yourorg\dto\ActivityEvent.class
+com\yourorg\dto\UserProfileResponse.class

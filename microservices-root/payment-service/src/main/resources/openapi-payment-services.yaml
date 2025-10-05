@@ -1,0 +1,144 @@
+openapi: 3.0.3
+info:
+  title: Subscription Services API
+  version: 1.0.0
+  description: APIs for managing user subscriptions, including add, update, removal, and multiple subscriptions.
+
+servers:
+  - url: http://localhost:8080
+    description: Local server
+
+paths:
+  /payments:
+    post:
+      summary: Add a payment against a  user
+      operationId: addPayment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'
+      responses:
+        '201':
+          description: Transaction done successfully
+        '400':
+          description: Invalid request
+
+  /payments/{userId}:
+    put:
+      summary: Update a user’s payment mode preference
+      operationId: updateSubscription
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentUpdateRequest'
+      responses:
+        '200':
+          description: Subscription updated successfully
+        '404':
+          description: User not found
+
+  /subscriptions/fetchUserPaymentHistory/{userId}:
+    get:
+      summary: fetches a single user's all payment history'
+      operationId: fetchUserPaymentHistory
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: All TransactionDetails fetched successfully
+        '404':
+          description: User not found or not a defaulter
+
+  /subscriptions/multiple:
+    post:
+      summary: Add multiple subscriptions to a user
+      operationId: addMultipleSubscriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultipleSubscriptionRequest'
+      responses:
+        '201':
+          description: Subscriptions added successfully
+        '400':
+          description: Invalid request
+
+components:
+  schemas:
+    SubscriptionRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+        subscriptionDetails:
+          $ref: '#/components/schemas/SubscriptionDetails'
+        paymentDetails:
+          $ref: '#/components/schemas/PaymentDetails'
+      required: [userId, subscriptionDetails, paymentDetails]
+
+    SubscriptionUpdateRequest:
+      type: object
+      properties:
+        subscriptionType:
+          type: string
+        billingCycle:
+          type: string
+        paymentCycle:
+          type: string
+      required: [subscriptionType, billingCycle]
+
+    MultipleSubscriptionRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+        subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionDetails'
+        paymentDetails:
+          $ref: '#/components/schemas/PaymentDetails'
+      required: [userId, subscriptions, paymentDetails]
+
+    SubscriptionDetails:
+      type: object
+      properties:
+        subscriptionType:
+          type: string
+        billingCycle:
+          type: string
+        paymentCycle:
+          type: string
+        valueAddedService:
+          type: boolean
+      required: [subscriptionType, billingCycle, paymentCycle]
+
+    PaymentDetails:
+      type: object
+      properties:
+        paymentMethod:
+          type: string
+        amount:
+          type: number
+        transactionId:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+      required: [paymentMethod, amount, transactionId]

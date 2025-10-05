@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: audit-service
+audit:
+  prometheus-url: http://localhost:9090
+  monitored-services:
+    - serviceA
+    - serviceB
+    - serviceC
+  thresholds:
+    CPU-usage: 80
+    memory-usage: 75
+    log-rate: 1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+server:
+  port: 1111
