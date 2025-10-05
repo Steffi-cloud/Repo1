@@ -1,0 +1,6 @@
+logging:
+  level:
+    org.apache.tomcat.util.compat: ERROR
+    org.apache.coyote.http11: ERROR
+server:
+  port: 8081

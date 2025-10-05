@@ -1,0 +1,8 @@
+com\yourorg\subscription\model\PaymentDetails.class
+com\yourorg\subscription\App.class
+com\yourorg\subscription\model\SubscriptionDetails.class
+com\yourorg\subscription\model\SubscriptionUpdateRequest.class
+com\yourorg\subscription\controller\SubscriptionController.class
+com\yourorg\subscription\model\SubscriptionRequest.class
+com\yourorg\subscription\service\SubscriptionService.class
+com\yourorg\subscription\model\MultipleSubscriptionRequest.class
