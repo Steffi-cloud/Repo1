@@ -1,7 +1,10 @@
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\model\PaymentDetails.java
+E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\model\PaymentUpdateRequest.java
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\model\User.java
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\service\PaymentService.java
+E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\model\MultipleSubscriptionRequest.java
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\controller\PaymentController.java
+E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\repository\SubscriptionRepository.java
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\model\SubscriptionDetails.java
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\App.java
 E:\microservices-root\payment-service\src\main\java\com\yourorg\payment\model\SubscriptionRequest.java
