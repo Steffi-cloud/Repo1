@@ -1,0 +1,4 @@
+com\example\demo\ApachekafkawithspringbootApplicationTests.class
+com\example\demo\controller\KafkaRestControllerTest.class
+com\example\demo\repository\MessageRepositoryTest.class
+com\example\demo\consumer\MessageConsumerTest.class

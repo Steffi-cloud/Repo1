@@ -1,0 +1,5 @@
+com\example\demo\controller\KafkaRestController.class
+com\example\demo\producer\MessageProducer.class
+com\example\demo\consumer\MessageConsumer.class
+com\example\demo\repository\MessageRepository.class
+com\example\demo\ApachekafkawithspringbootApplication.class

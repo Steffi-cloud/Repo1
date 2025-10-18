@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kafkasampleproducerconsumer
+  main:
+    banner-mode: off
+  zipkin:
+    enabled: false
+  sleuth:
+    propagation:
+      type: B3
+  kafka:
+    order:
+      bootstrap-servers: ${KAFKA_CONNECTION_BOOTSTRAP_SERVERS:localhost:9092}
+      topic:
+        create-order: create-order
+      consumer:
+        group-id:
+          notification: notification
+          service: service
+server:
+  port: ${SERVER_PORT:1000}
+

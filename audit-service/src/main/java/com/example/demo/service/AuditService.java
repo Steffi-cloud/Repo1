@@ -2,16 +2,20 @@ package com.example.demo.service;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.demo.controller.AuditController;
 import com.example.demo.model.AuditResult;
 @Service
 public class AuditService {
 	   @Value("${audit.prometheus-url}")
 	    private String prometheusUrl;
+		private Logger log = LoggerFactory.getLogger(AuditService.class);
 
 	    private final RestTemplate restTemplate = new RestTemplate();
 
@@ -20,7 +24,7 @@ public class AuditService {
 	    @Scheduled(fixedRate = 60000)
 	    public void runAudit() {
 	        AuditResult result = new AuditResult();
-
+	        log.info("in runAudit method");
 	        checkMemoryUsage(result);
 	        checkCPUUsage(result);
 	        checkConnectionPoolLeaks(result);
@@ -36,7 +40,7 @@ public class AuditService {
 	        String query = "sum by(instance) (process_resident_memory_bytes)";
 	        String url = prometheusUrl + "/api/v1/query?query=" + query;
 	        JSONObject response = new JSONObject(restTemplate.getForObject(url, String.class));
-
+	        log.info("in checkMemoryUsage method");
 	        JSONArray results = response.getJSONObject("data").getJSONArray("result");
 	        for (int i = 0; i < results.length(); i++) {
 	            JSONObject metricObj = results.getJSONObject(i).getJSONObject("metric");
@@ -54,7 +58,7 @@ public class AuditService {
 	        String query = "rate(process_cpu_seconds_total[1m])";
 	        String url = prometheusUrl + "/api/v1/query?query=" + query;
 	        JSONObject response = new JSONObject(restTemplate.getForObject(url, String.class));
-
+	        log.info("in checkCPUUsage method");
 	        JSONArray results = response.getJSONObject("data").getJSONArray("result");
 	        for (int i = 0; i < results.length(); i++) {
 	            JSONObject metricObj = results.getJSONObject(i).getJSONObject("metric");
@@ -72,7 +76,7 @@ public class AuditService {
 	        String query = "db_connection_pool_active_connections";
 	        String url = prometheusUrl + "/api/v1/query?query=" + query;
 	        JSONObject response = new JSONObject(restTemplate.getForObject(url, String.class));
-
+	        log.info("in checkConnectionPoolLeaks method");
 	        JSONArray results = response.getJSONObject("data").getJSONArray("result");
 	        for (int i = 0; i < results.length(); i++) {
 	            String instance = results.getJSONObject(i).getJSONArray("metric").optString(0);
